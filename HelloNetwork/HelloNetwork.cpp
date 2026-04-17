@@ -5,6 +5,7 @@
 #include <winsock2.h>
 #include <string>
 #include <vector>
+#include <fstream>
 
 
 #pragma comment(lib, "ws2_32.lib")
@@ -46,6 +47,10 @@ void Info()
 
 void Exploit(Target& target)
 {
+    
+    ofstream logger;
+    logger.open("log.txt", ios::app);
+    
     WSADATA info; 
     WSAStartup(MAKEWORD(2,2), &info);
     
@@ -69,12 +74,22 @@ void Exploit(Target& target)
     if (connessione == SOCKET_ERROR) {
         cout << "[!] ERROR: Connessione fallita" << endl;
         target.isOpen = false;
+        logger << "Target: " << target.name << endl;
+        logger << "IP: " << target.ip << endl;
+        logger << "PORT: " << target.port << endl;
+        logger << "STATUS: CLOSED" << endl;
     } else {
         target.isOpen = true;
         cout << "[+] CONNESSO: Sei dentro al bersaglio" << endl;
+        target.isOpen = false;
+        logger << "Target: " << target.name << endl;
+        logger << "IP: " << target.ip << endl;
+        logger << "PORT: " << target.port << endl;
+        logger << "STATUS: OPEN" << endl;
     }
     closesocket(mySocket); 
     WSACleanup();
+    logger.close();
 }
 
 
