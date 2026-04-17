@@ -1,0 +1,24 @@
+-----------------------------
+TARGET: 127.0.0.1
+PORTA : 3306
+STATO : APERTA
+BANNER: Y
+-----------------------------
+-----------------------------
+TARGET: 127.0.0.1
+PORTA : 3306
+STATO : APERTA
+BANNER: Scansione rapida - Banner non richiesto
+-----------------------------
+-----------------------------
+TARGET: 127.0.0.1
+PORTA : 80
+STATO : APERTA
+BANNER: Scansione rapida - Banner non richiesto
+-----------------------------
+-----------------------------
+TARGET: 127.0.0.1
+PORTA : 443
+STATO : APERTA
+BANNER: Scansione rapida - Banner non richiesto
+-----------------------------
